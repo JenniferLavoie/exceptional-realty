@@ -1,110 +1,78 @@
-@import url(https://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900);
-@import url(https://fonts.googleapis.com/css?family=Clicker+Script);
+@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900);
+@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
 
-/* This is a comment */
+/*////////// GLOBAL //////////*/
 
-/* CSS Syntax:
-
-selector {
-  property: value;
-  property: value;
+h3 {
+  margin: 0 0 10px;
 }
 
-*/
+p { 
+  font-size: 1em; /* 16px, ?pt, 100%, 1em */
+  line-height: 1.5em;
+}
 
-/* Type selector*/
-
-p {/* select all <p>*/
-
-  font-size: 1em; /* 16px ?pt, 100%, 1em */
-  line-height: 1.5em; /* */
+figure {
+  margin: 0 0 10px;
 }
 
 figcaption {
-  font-weight: normal;
-  font-size: 0.75em; 
-  line-height: 1.5em;
-  font-family: Georiga, "New Times Roman", serif;
-  font: normal 0.75em/1.5em 'Elsie Swash Caps', cursive;  
+  font: normal 0.75em/1.5em 'Elsie Swash Caps', cursive;
   color: #777;
-  text-align: right; 
+  text-align: right;
 }
 
-/* Class selector (applied to as many elements as you like) */
-
-.milk-text {/*select elements with class="milk-text"*/
-
+.milk-text {
   font: bold 2.6em 'Elsie Swash Caps', cursive;
   color: white;
   text-shadow: 0 2px 3px #000;
 }
 
-/* ID select (apply to one unique element per page) */
-
-#logo { /* select elements with id="logo" */
-   
-
+.shadow {
+  box-shadow: 0 3px 10px #333;
 }
 
-/* Descendent Selector */
-
-#logo h1{/* selects <h1> if inside the unique id="logo" */
-    font-family: 'Clicker Script', cursive;
+.border-right{
+  border-right: 1px dotted #ccc;
+  padding-right: 30px;
 }
 
-#logo h2 {
-  font-family: 'Elsie Swash Caps', cursive;
+/*////////// BACKGROUNDS //////////*/
+
+.white-wood{
+  background: url(../images/white-wood.jpg) no-repeat center top;
+  background-size: cover;
 }
 
-/* Psuedo Selector */
-
-#details a:link, #details a:visited { 
-    color:black;
-    text-decoration: none;
+.light-fade{
+  background: #e2e2e2; /* Old browsers */
+  background: -moz-linear-gradient(top,  #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); /* IE6-9 */
 }
 
-#details a:hover {
-  color: black;
-  text-decoration: underline;
+.medium-fade{
+  background: #f5f6f6; /* Old browsers */
+  background: -moz-linear-gradient(top,  #f5f6f6 0%, #dbdce2 21%, #b8bac6 49%, #dddfe3 80%, #f5f6f6 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #f5f6f6 0%,#dbdce2 21%,#b8bac6 49%,#dddfe3 80%,#f5f6f6 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #f5f6f6 0%,#dbdce2 21%,#b8bac6 49%,#dddfe3 80%,#f5f6f6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', endColorstr='#f5f6f6',GradientType=0 ); /* IE6-9 */
 }
 
-#details a:active {
-  color: red;
+/*/////// MEDIA ////////*/
+
+img, video, audio, iframe, table, form {
+  width: 100%; /* IE */
+  max-width: 100%; /* FF, Safari, Chrome */
 }
 
-/*///////// Media ////////*/
+/*////////// FIXES //////////*/
 
-img, video, audio {
-  max-width: 100%;
-}
-
-/*///////// LAYOUT ////////*/
-
-*{
+* {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-.wrapper{
-  width: 960px;
-  margin: 0 auto;
-}
-
-.col-1{
-  float: left;
-  width: 32%;
-  background: #ccc;
-}
-
-.col-2{
-  float: left;
-  width: 66%;
-  background: #ccc;
-}
-
-.col-3{
-  background: #ccc;
 }
 
 .clearfix:after {
@@ -116,7 +84,32 @@ img, video, audio {
   line-height: 0;
 }
 
-[class*="col-"]{
+.clear {
+  clear:both;
+}
+
+/*/////// LAYOUT ////////*/
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.col-1 {
+  float: left;
+  width: 32%; 
+}
+
+.col-2 {
+  float: left;
+  width: 66%;
+}
+
+.col-3 {
+  
+}
+
+[class*="col-"] {
   margin-left: 2%;
 }
 
@@ -124,27 +117,11 @@ img, video, audio {
   margin-left: 0%;
 }
 
-/*///////// SECTIONS ////////*/
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  z-index: 1;
-}
-
-section {
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-/*///////// SOCIAL ////////*/
+/*/////// SOCIAL ////////*/
 
 #social {
   position: fixed;
-  top: 200px;
+  top: 185px;
   right: 20px;
   width: 40px;
   z-index: 1;
@@ -155,4 +132,112 @@ section {
   width: 40px;
   height: 40px;
   background: yellow;
+}
+
+/*////////// HEADER //////////*/
+
+header {
+  margin: 0 0 30px;
+}
+
+
+/*////////// NAVBAR //////////*/
+
+#navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+#navbar nav {
+  border-left: 1px solid #ccc;
+}
+
+#navbar nav a {
+  display: inline-block;
+  width: 16.666667%;
+  margin: 0;
+  padding: 22px 0;
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  text-decoration: none;
+  font: 1em "Trebuchet MS", Arial, san-serif;
+}
+
+#navbar nav a.selected {
+  background: #333;
+  color: white;
+}
+
+#navbar nav a:hover {
+  color: white;
+  background: #b5bdc8; /* Old browsers */
+  background: -moz-linear-gradient(top,  #b5bdc8 0%, #828c95 36%, #28343b 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #b5bdc8 0%,#828c95 36%,#28343b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
+}
+
+/*////////// LOGO //////////*/
+
+#logo {
+  padding: 84px 0 0;
+}
+
+#logo h1 {
+  font-family: 'Clicker Script', cursive;
+  margin: 0;
+}
+
+#logo h2 {
+  font-family: 'Elsie Swash Caps', cursive;
+  margin: 0;
+}
+
+/*////////// MAIN SECTIONS //////////*/
+
+section {
+  padding: 30px;
+  margin-bottom: 20px;
+  background: white;
+}
+
+/*////////// DETAILS //////////*/
+
+#details {
+  border-top: 1px solid white;
+}
+
+#details div {
+  height: 221px;
+}
+
+#details a:link, #details a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+#details a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+#details a:active {
+  color: red;
+}
+
+/*////////// FOOTER //////////*/
+
+footer {
+  text-align: center;
+  font-size: 0.75em;
+  padding: 10px;
+  background: #eee;
+  border-top: 1px solid #ccc;
 }
